@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="Dian.css">
+</head>
+<body>
+  <h1>Login</h1>
+
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+<form action="Dian(2).html" method="post">
+    <button type="submit">Login</button>
+  </form>
+
+  <p id="errorMessage"></p>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'oniot' && password === '123') {
+       
+        alert('Login successful!');
+        
+      } else {
+        
+        errorMessage.textContent = 'Invalid username or password.';
+      }
+    });
+  </script>
+</body>
+</html>
